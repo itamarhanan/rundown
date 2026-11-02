@@ -1,0 +1,11 @@
+node_modules
+dist
+*.tsbuildinfo
+.env
+*.log
+.DS_Store
+.fallow/
+.scratch/
+.opencode/
+coverage/
+*.tgz

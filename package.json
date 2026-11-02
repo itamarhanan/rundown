@@ -1,0 +1,47 @@
+{
+  "name": "rundown",
+  "version": "0.1.0",
+  "private": true,
+  "description": "standup prep in one command",
+  "keywords": [
+    "cli",
+    "developer-tools",
+    "productivity",
+    "standup"
+  ],
+  "homepage": "https://github.com/itamarhanan/rundown#readme",
+  "bugs": {
+    "url": "https://github.com/itamarhanan/rundown/issues"
+  },
+  "license": "MIT",
+  "author": "Itamar Hanan <itamarhanan@hilma.tech>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/itamarhanan/rundown.git"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "pnpm -r --filter @rundown/core --filter @rundown/web build && pnpm --filter @rundown/cli build",
+    "dev": "pnpm --filter @rundown/cli dev",
+    "rundown": "node bin/rundown.mjs",
+    "smoke": "pnpm build && node bin/rundown.mjs sources list",
+    "typecheck": "pnpm -r typecheck",
+    "test": "vitest run",
+    "lint": "oxlint .",
+    "format": "oxfmt --write .",
+    "format:check": "oxfmt --check ."
+  },
+  "devDependencies": {
+    "@effect/vitest": "^0.30.1",
+    "@types/node": "^22.20.5",
+    "oxfmt": "^0.74.0",
+    "oxlint": "^1.89.0",
+    "tsdown": "^0.23.2",
+    "typescript": "~5.9.3",
+    "vitest": "^4.0.5"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "packageManager": "pnpm@10.28.1"
+}

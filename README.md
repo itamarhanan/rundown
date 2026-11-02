@@ -32,13 +32,7 @@ a local web page.
 
 ## Install
 
-From npm (after the CLI is published):
-
-```bash
-npm install -g @rundown/cli
-```
-
-From source:
+Rundown isn't on npm. Install from source:
 
 ```bash
 git clone https://github.com/itamarhanan/rundown.git
@@ -50,6 +44,13 @@ pnpm build            # once; binaries land in packages/*/dist
 
 The built CLI reads `@rundown/core`'s compiled output, so run `pnpm build`
 after pulling changes that touch `packages/core`.
+
+`./rundown` works from the repo root. If you want `rundown` on your PATH from
+anywhere, link the built CLI globally:
+
+```bash
+pnpm --filter @rundown/cli link --global
+```
 
 ## Quick start
 
@@ -192,19 +193,6 @@ confirm the local server is up and the model name matches.
 - API keys are read from the environment, and `${VAR}` interpolation in the
   config file resolves at load time. Secrets never need to touch disk.
 - Cached activities live in a local SQLite database in the data directory.
-
-## Publishing (maintainers)
-
-`@rundown/core` and `@rundown/cli` are published to npm as public packages;
-`@rundown/web` stays private and ships bundled inside the CLI. Note that
-`npm --workspace` does not resolve pnpm workspaces, so publish from each
-package directory:
-
-```bash
-pnpm build
-npm publish packages/core
-npm publish packages/cli
-```
 
 ## Contributing
 

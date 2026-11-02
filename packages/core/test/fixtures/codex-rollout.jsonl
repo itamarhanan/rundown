@@ -1,0 +1,9 @@
+{"timestamp":"2026-11-05T10:00:00.000Z","type":"session_meta","payload":{"id":"0199a1b2-c3d4","timestamp":"2026-11-05T10:00:00.000Z","cwd":"/home/dev/work/nautilus","originator":"codex_cli_rs","cli_version":"0.50.0","git":{"commit_hash":"abc123","branch":"fix/scheduler","repository_url":"git@github.com:acme/nautilus.git"}}}
+{"timestamp":"2026-11-05T10:00:01.000Z","type":"response_item","payload":{"type":"message","role":"user","content":[{"type":"input_text","text":"<environment_context>\n  <cwd>/home/dev/work/nautilus</cwd>\n</environment_context>"}]}}
+{"timestamp":"2026-11-05T10:00:02.000Z","type":"turn_context","payload":{"cwd":"/home/dev/work/nautilus","approval_policy":"on-request","sandbox_policy":{"mode":"workspace-write"},"model":"gpt-5-codex","effort":"medium"}}
+{"timestamp":"2026-11-05T10:00:03.000Z","type":"response_item","payload":{"type":"message","role":"user","content":[{"type":"input_text","text":"Fix the flaky scheduler test\nit fails on CI about 1 in 5 runs"}]}}
+{"timestamp":"2026-11-05T10:00:04.000Z","type":"event_msg","payload":{"type":"user_message","message":"Fix the flaky scheduler test"}}
+{"timestamp":"2026-11-05T10:05:00.000Z","type":"response_item","payload":{"type":"message","role":"assistant","content":[{"type":"output_text","text":"Fixed the race."}]}}
+{"timestamp":"2026-11-05T10:20:00.000Z","type":"event_msg","payload":{"type":"token_count","info":null}}
+{"timestamp":"2026-11-05T10:21:00.000Z","type":"response_item","payload":{"type":"message","role":"user","content":[{"type":"input_text","text":"Also bump the version"}]}}
+{"timestamp":"2026-11-06T09:00:00.000Z","type":"response_item","payload":{"type":"message","role":"user","content":[{"type":"input_text","text":"Next day prompt"}]}}

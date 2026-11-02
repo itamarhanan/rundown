@@ -21,18 +21,12 @@
   "bin": {
     "rundown": "./dist/main.mjs"
   },
-  "files": [
-    "dist"
-  ],
   "type": "module",
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
     "build": "tsdown",
     "dev": "tsx --conditions=@rundown/source src/main.ts",
-    "typecheck": "tsc -p tsconfig.json",
-    "prepublishOnly": "pnpm build"
+    "link": "pnpm build && pnpm link --global",
+    "typecheck": "tsc -p tsconfig.json"
   },
   "dependencies": {
     "@clack/prompts": "^1.8.1",
@@ -53,7 +47,6 @@
     "@types/react": "^19.3.0",
     "tsx": "^4.20.0"
   },
-  "preferGlobal": true,
   "engines": {
     "node": ">=22.0.0"
   }

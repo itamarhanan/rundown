@@ -1,0 +1,60 @@
+{
+  "name": "@rundown/cli",
+  "version": "0.1.0",
+  "description": "Standup prep in one command",
+  "keywords": [
+    "cli",
+    "developer-tools",
+    "productivity",
+    "standup"
+  ],
+  "homepage": "https://github.com/itamarhanan/rundown#readme",
+  "bugs": {
+    "url": "https://github.com/itamarhanan/rundown/issues"
+  },
+  "license": "MIT",
+  "author": "Itamar Hanan <itamarhanan@hilma.tech>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/itamarhanan/rundown.git"
+  },
+  "bin": {
+    "rundown": "./dist/main.mjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsx --conditions=@rundown/source src/main.ts",
+    "typecheck": "tsc -p tsconfig.json",
+    "prepublishOnly": "pnpm build"
+  },
+  "dependencies": {
+    "@clack/prompts": "^1.8.1",
+    "@effect/platform": "^0.97.3",
+    "@hono/node-server": "^2.1.5",
+    "@inkjs/ui": "^2.0.0",
+    "@rundown/core": "workspace:*",
+    "citty": "^0.2.2",
+    "effect": "^3.22.4",
+    "hono": "^4.13.14",
+    "ink": "^8.0.0",
+    "node-cron": "^4.6.0",
+    "react": "^19.3.1",
+    "yaml": "^2.9.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "@types/react": "^19.3.0",
+    "tsx": "^4.20.0"
+  },
+  "preferGlobal": true,
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}
